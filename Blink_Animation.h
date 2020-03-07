@@ -9,12 +9,12 @@ private:
     struct Parameters
     {
         int PA, PB, PC;
-    } m_parameters_ = {5, 6, 7};
+    } parameters_ = {5, 6, 7};
 
 public:
     Blink_Animation();
     ~Blink_Animation() final;
 
-    void OnUpdate() final;
-    void SetParameters() final;
+    void onUpdate() final;
+    void setParameters() final;
 };

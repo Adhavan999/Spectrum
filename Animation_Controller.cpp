@@ -1,6 +1,16 @@
 #include "Animation_Controller.h"
 
-Animation *Animation_Controller::GetAnimation(definitions::Animations new_animation)
+Animation_Controller::Animation_Controller()
+	: current_animation_(getAnimation(definitions::DEFAULT_ANIMATION))
+{
+}
+
+Animation_Controller::~Animation_Controller()
+{
+	delete Animation_Controller::current_animation_;
+}
+
+Animation *Animation_Controller::getAnimation(definitions::Animations new_animation)
 {
 	switch (new_animation)
 	{
@@ -12,6 +22,10 @@ Animation *Animation_Controller::GetAnimation(definitions::Animations new_animat
 		return (new Blink_Animation);
 		break;
 
+	case definitions::Animations::SET_COLOR:
+		return (new SetColor_Animation);
+		break;
+
 	default:
 		//Add some exception here
 		return (NULL);
@@ -20,28 +34,18 @@ Animation *Animation_Controller::GetAnimation(definitions::Animations new_animat
 	return NULL;
 }
 
-Animation_Controller::Animation_Controller()
-	: current_animation_(GetAnimation(definitions::DEFAULT_ANIMATION))
-{
-}
-
-Animation_Controller::~Animation_Controller()
-{
-	delete Animation_Controller::current_animation_;
-}
-
-void Animation_Controller::SetAnimation(definitions::Animations new_animation)
+void Animation_Controller::setAnimation(definitions::Animations new_animation)
 {
 	delete current_animation_;
-	current_animation_ = GetAnimation(new_animation);
+	current_animation_ = getAnimation(new_animation);
 }
 
-void Animation_Controller::SetParameters()
+void Animation_Controller::setParameters()
 {
-	current_animation_->SetParameters();
+	current_animation_->setParameters();
 }
 
-void Animation_Controller::UpdateAnimation()
+void Animation_Controller::updateAnimation()
 {
-	current_animation_->OnUpdate();
+	current_animation_->onUpdate();
 }

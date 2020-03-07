@@ -1,11 +1,11 @@
 #include "Blink_Animation.h"
 
-void Blink_Animation::SetParameters()
+void Blink_Animation::setParameters()
 {
     m_parameters_ = {1, 2, 3};
 }
 
-void Blink_Animation::OnUpdate()
+void Blink_Animation::onUpdate()
 {
     if (m_parameters_.PA == 1)
     {

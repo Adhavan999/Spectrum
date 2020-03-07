@@ -10,11 +10,12 @@ private:
     struct Parameters
     {
         int PA, PB, PC;
-    } m_parameters_ = {5, 6, 7};
+    } parameters_ = {5, 6, 7};
 
 public:
-    void SetParameters() final;
-    void OnUpdate() final;
     Twinkle_Animation();
     ~Twinkle_Animation() final;
+
+    void setParameters() final;
+    void onUpdate() final;
 };
