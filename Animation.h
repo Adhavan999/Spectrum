@@ -9,7 +9,7 @@ class Animation
 {
 private:
 protected:
-    static CRGB leds_[definitions::NUM_LEDS];
+    static CRGB leds_[definitions::NUM_LEDS]; //using CRGB because CRGB can take CHSV values but not the other way around
 
 public:
     Animation();
