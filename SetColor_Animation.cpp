@@ -10,7 +10,7 @@ SetColor_Animation::~SetColor_Animation()
 
 void SetColor_Animation::setParameters()
 {
-    /*read parameters of size 4 bytes and set (HSV can be converted to RGB but not the other way around)
+    /*something like this: read parameters of size 4 bytes and set (HSV can be converted to RGB but not the other way around)
                                             color_type_ = myTransfer.rxBuff[0]
                                             if(color_type_ == ColorType::HSV)
                                             {
