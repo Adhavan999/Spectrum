@@ -4,6 +4,7 @@
 #include "Animation.h"
 #include "Twinkle_Animation.h"
 #include "Blink_Animation.h"
+#include "SetColor_Animation.h"
 
 class Animation_Controller
 {

@@ -15,7 +15,7 @@ private:
         } color_type_;
         union {
             CRGB rgb_new_color_;
-        }
+        };
 
     } parameters_;
 

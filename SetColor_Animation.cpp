@@ -26,9 +26,9 @@ void SetColor_Animation::setParameters()
 void SetColor_Animation::onUpdate()
 {
 #if (!IS_LED_MATRIX)
-    for (int i = 0; i < NUM_LEDS; i++)
+    for (int i = 0; i < definitions::NUM_LEDS; i++)
     {
-        leds_[i] = rgb_new_color_;
+        leds_[i] = parameters_.rgb_new_color_;
     }
 #endif
 }
