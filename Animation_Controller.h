@@ -9,13 +9,13 @@ class Animation_Controller
 {
 private:
 	Animation *current_animation_;
-	Animation *GetAnimation(definitions::Animations);
+	Animation *getAnimation(definitions::Animations);
 
 public:
 	Animation_Controller();
 	~Animation_Controller();
 
-	void SetAnimation(definitions::Animations);
-	void SetParameters();
-	void UpdateAnimation();
+	void setAnimation(definitions::Animations);
+	void setParameters();
+	void updateAnimation();
 };

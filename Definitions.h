@@ -5,10 +5,9 @@ namespace definitions
 {
 enum Animations
 {
-    VIZ_SCROLL,
-    VIZ_BREATH,
     TWINKLE,
-    BLINK
+    BLINK,
+    SET_COLOR
 };
 
 extern Animations DEFAULT_ANIMATION;
