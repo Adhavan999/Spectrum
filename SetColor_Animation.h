@@ -15,7 +15,6 @@ private:
         } color_type_;
         union {
             CRGB rgb_new_color_;
-            CHSV hsv_new_color_;
         }
 
     } parameters_;
