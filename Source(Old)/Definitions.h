@@ -3,7 +3,7 @@
 
 namespace definitions
 {
-enum Animations
+enum class Animations
 {
     TWINKLE,
     BLINK,

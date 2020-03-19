@@ -1,6 +1,6 @@
 #include "SetColor_Animation.h"
 
-SetColor_Animation::SetColor_Animation(/* args */)
+SetColor_Animation::SetColor_Animation()
 {
 }
 

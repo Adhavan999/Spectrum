@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:uno",
-    "sketch": "Main.ino",
+    "sketch": "Source\\Main.ino",
     "output": "D:\\Documents\\Arduino Projects\\Output"
 }

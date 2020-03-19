@@ -6,16 +6,14 @@
 class SetColor_Animation : public Animation
 {
 private:
-    struct Parameters
+    struct
     {
         enum ColorType
         {
             RGB,
             HSV
         } color_type_;
-        union {
-            CRGB rgb_new_color_;
-        };
+        CRGB rgb_new_color_;
 
     } parameters_;
 
