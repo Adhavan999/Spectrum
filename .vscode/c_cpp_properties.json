@@ -7,12 +7,18 @@
                 "USBCON"
             ],
             "includePath": [
-                "D:\\Documents\\Arduino Projects\\libraries\\**",
-                "C:\\Users\\Adhavan\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
-                "C:\\Users\\Adhavan\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.1\\**",
+                "C:\\Users\\Adhavan\\AppData\\Local\\Arduino15\\packages\\arduino\\tools/**",
+                "C:\\Users\\Adhavan\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.1/**",
                 "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\**",
                 "C:\\Program Files (x86)\\Arduino\\libraries\\**",
-                "${workspaceFolder}\\**"
+                "${workspaceFolder}\\**",
+                "C:\\Users\\Adhavan\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.1\\**",
+                "C:\\Users\\Adhavan\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "D:/Documents/Arduino Projects/libraries/SerialTransfer/src",
+                "D:/Documents/Arduino Projects/libraries/QList/src",
+                "D:/Documents/Arduino Projects/libraries/FastLED",
+                "C:/Users/Adhavan/AppData/Local/Arduino15/packages/arduino/hardware/avr/1.8.1/cores/arduino",
+                "C:/Users/Adhavan/AppData/Local/Arduino15/packages/arduino/hardware/avr/1.8.1/libraries/EEPROM/src"
             ],
             "forcedInclude": [
                 "C:\\Users\\Adhavan\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.1\\cores\\arduino\\Arduino.h"
