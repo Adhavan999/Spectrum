@@ -1,42 +1,46 @@
 #pragma once
-#include "Core.h"
-#include "Component.h"
-#include "Animation.h"
+#include "animations.h"
+#include "defs.h"
+#include <EEPROM.h>
 
-namespace spectrum
+class AnimationController
 {
-class AnimationController : public Component
-{
-private:
-    enum class State
-    {
-        ANIMATE,
-        CHANGE_ANIMATION,
-        DO_NOTHING
-    };
-    static State current_state_;
-    static Animation *current_animation_;
-    friend void Animation::delayAnimation(unsigned long, AnimationController &);
-
 public:
+    const uint16_t leds_x_length_ = NUM_X_LEDS;
+    const uint16_t leds_y_length_ = NUM_Y_LEDS;
+    CRGB leds_[NUM_Y_LEDS * NUM_X_LEDS];
+
+    Animation *current_animation_ = nullptr;
+
     AnimationController();
-    ~AnimationController() override;
+    ~AnimationController();
 
-    void onUpdate() override;
+    Buffer ReadLastBufferFromMemory();
+    void HandleMessage(Buffer buffer);
+    bool SetCurrentAnimation(Buffer buffer);
 
-    void changeAnimation();
+    void Update();
 };
 
-void Animation::delayAnimation(unsigned long m_delay, AnimationController &m_current_controller)
+static bool Set_Rx_Buffer(uint8_t *start_of_Rx_buffer)
 {
-    m_current_controller.current_state_ = AnimationController::State::DO_NOTHING;
-    uint32_t start = millis();
-
-    while (start + m_delay > millis())
+    for (int i = 0; i < 254; i++)
     {
-        Core::instance().onUpdate();
+        start_of_Rx_buffer[i] = EEPROM.read(i);
     }
-    m_current_controller.current_state_ = AnimationController::State::ANIMATE;
+    if ((MessageType)start_of_Rx_buffer[0] == MessageType::NEW_ANIMATION)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
-
-} // namespace spectrum
+static void Set_EEPROM_Buffer(uint8_t *start_of_Rx_buffer)
+{
+    for (int i = 0; i < 254; i++)
+    {
+        EEPROM.write(i, start_of_Rx_buffer[i]);
+    }
+}

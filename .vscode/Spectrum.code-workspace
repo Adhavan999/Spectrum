@@ -7,8 +7,10 @@
 	"settings": {
 		"C_Cpp.intelliSenseCacheSize": 0,
 		"C_Cpp.intelliSenseEngine": "Default",
+		"python.pythonPath": "Client\\Visualizer\\Scripts\\python.exe",
 		"files.associations": {
-			"*.ino": "cpp"
+			"*.ino": "cpp",
+			"vector": "cpp"
 		}
 	}
 }
