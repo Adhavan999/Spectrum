@@ -70,13 +70,8 @@ bool AnimationController::SetCurrentAnimation(Buffer buffer)
 
 void AnimationController::Update()
 {
-    // if (current_animation_ != nullptr)
-    // {
-    //     current_animation_->Update();
-    // }
-    for (int i = 0; i < leds_x_length_ * leds_y_length_; i++)
+    if (current_animation_ != nullptr)
     {
-        leds_[i] = CRGB::BlueViolet;
+        current_animation_->Update();
     }
-    FastLED.show();
 }
